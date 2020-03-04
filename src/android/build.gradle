@@ -7,11 +7,11 @@ repositories{
 
 dependencies {
     compile(name:'ScanditBarcodeCapture', ext:'aar')
-	 compile(name:'ScanditCaptureCore', ext:'aar')
-	  compile(name:'kotlin-stdlib-jdk7-1.3.61', ext:'jar')
-	   compile(name:'kotlin-stdlib-common-1.3.61', ext:'jar')
-	    compile(name:'kotlin-stdlib-1.3.61', ext:'jar')
-		 compile(name:'annotations-13.0', ext:'jar')
+	 compile(name:'ScanditCaptureCore', ext:'aar')	 
+		 provided files('lib/kotlin-stdlib-jdk7-1.3.61.jar')
+		 provided files('lib/kotlin-stdlib-common-1.3.61.jar')
+		 provided files('lib/kotlin-stdlib-1.3.61.jar')
+		 provided files('lib/annotations-13.0.jar')
 }
 
 android {
