@@ -13,6 +13,7 @@ import android.support.annotation.NonNull;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.scandit.datacapture.barcode.capture.BarcodeCapture;
 import com.scandit.datacapture.barcode.capture.BarcodeCaptureListener;
@@ -131,10 +132,6 @@ public class NewActivity extends CameraPermissionActivity implements BarcodeCapt
         BarcodeCaptureOverlay overlay = BarcodeCaptureOverlay.newInstance(barcodeCapture, dataCaptureView);
         overlay.setViewfinder(new RectangularViewfinder());
 
-//        Toast toast = Toast.makeText(this, "Hai", Toast.LENGTH_LONG);
-//        // Display toast
-//        toast.show();
-
 
         setContentView(dataCaptureView);
 
@@ -197,18 +194,11 @@ public class NewActivity extends CameraPermissionActivity implements BarcodeCapt
     }
 
     private void showResult(String result) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        dialog = builder.setCancelable(false)
-                .setTitle(result)
-                .setPositiveButton(android.R.string.ok,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                barcodeCapture.setEnabled(true);
-                            }
-                        })
-                .create();
-        dialog.show();
+
+        Toast toast = Toast.makeText(this, result, Toast.LENGTH_LONG);
+        // Display toast
+        toast.show();
+        barcodeCapture.setEnabled(true);
     }
 
     @Override

@@ -30,9 +30,6 @@ public class ToastyPlugin extends CordovaPlugin {
         callbackContext.error("Error encountered: " + e.getMessage());
         return false;
       }
-        Toast toast = Toast.makeText(cordova.getActivity(), "Hai", Toast.LENGTH_LONG);
-        // Display toast
-        toast.show();
 
         Context context = cordova.getActivity().getApplicationContext();
         this.openNewActivity(context);
