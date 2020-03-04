@@ -9,11 +9,14 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.scandit.datacapture.barcode.capture.BarcodeCapture;
 import com.scandit.datacapture.barcode.capture.BarcodeCaptureListener;
@@ -45,20 +48,16 @@ public class NewActivity extends CameraPermissionActivity implements BarcodeCapt
 
     private AlertDialog dialog;
 
+    FrameLayout frameLayout;
+    Button button ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(500,500));
-        linearLayout.setBackgroundColor(Color.YELLOW);
-
-        Button button = new Button(this);
-        button.setLayoutParams(new ViewGroup.LayoutParams(200,200));
-        button.setBackgroundColor(Color.RED);
-        linearLayout.addView(button);
-
-        setContentView(linearLayout);
+        frameLayout = new FrameLayout(this);
+        frameLayout.setLayoutParams(new ViewGroup.LayoutParams(500,500));
+        frameLayout.setBackgroundColor(Color.GREEN);
 
         initializeAndStartBarcodeScanning();
 
@@ -133,7 +132,19 @@ public class NewActivity extends CameraPermissionActivity implements BarcodeCapt
         overlay.setViewfinder(new RectangularViewfinder());
 
 
-        setContentView(dataCaptureView);
+
+
+        button = new Button(this);
+        button.setPadding(100,0,0,20);
+        button.setGravity(Gravity.BOTTOM);
+
+       // button.setLayoutParams(new ViewGroup.LayoutParams(500,300));
+        button.setBackgroundColor(Color.TRANSPARENT);
+        button.setTextColor(Color.RED);
+        frameLayout.addView(dataCaptureView);
+        frameLayout.addView(button);
+
+        setContentView(frameLayout);
 
 
     }
@@ -195,9 +206,13 @@ public class NewActivity extends CameraPermissionActivity implements BarcodeCapt
 
     private void showResult(String result) {
 
-        Toast toast = Toast.makeText(this, result, Toast.LENGTH_LONG);
-        // Display toast
-        toast.show();
+        if(button!=null)
+        {
+
+            button.setText(result);
+
+        }
+
         barcodeCapture.setEnabled(true);
     }
 
