@@ -31,5 +31,10 @@
         <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
 		<source-file src="src/android/CameraPermissionActivity.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
 		<source-file src="src/android/NewActivity.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
+		
+		<framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
+        <lib-file src="src/android/ScanditBarcodeCapture.aar"/>
+		<lib-file src="src/android/ScanditCaptureCore.aar"/>
+		<lib-file src="src/android/kotlin-stdlib-jdk7-1.3.61.jar"/>		
     </platform>
 </plugin>
