@@ -8,7 +8,6 @@ repositories{
 dependencies {
     compile(name:'ScanditBarcodeCapture', ext:'aar')
 	 compile(name:'ScanditCaptureCore', ext:'aar')
-	  compile(name:'kotlin-stdlib-jdk7-1.3.61', ext:'jar')
 }
 
 android {
