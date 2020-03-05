@@ -43,5 +43,35 @@
 		<source-file src="src/android/annotations-13.0.jar" target-dir="libs"/>
     </platform>
 	
+	   <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToastyPlugin">
+                <param name="ios-package" value="ToastyPlugin" />
+            </feature>
+        </config-file>
+		  <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>Required for Scanning</string>
+        </config-file>
+		
+		<framework src="CordovaLib.lib" />
+		<framework src="libiconv.dylib" />
+        <framework src="AVFoundation.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="CoreVideo.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreImage.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="src/ios/ScanditBarcodeCapture.framework" custom="true"/>
+        <framework src="src/ios/ScanditCaptureCore.framework" custom="true"/>
+		
+		
+    <header-file src="src/ios/ToastyPlugin.h" target-dir="ToastyPlugin"/>
+    <source-file src="src/ios/ToastyPlugin.m" target-dir="ToastyPlugin"/>
+     
+    </platform>
+	
+	
+	
 	
 </plugin>
