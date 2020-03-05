@@ -53,7 +53,10 @@
             <string>Required for Scanning</string>
         </config-file>
 		
-     
+        <resource-file src="src/ios/MainViewController.xib" />
+        <framework src="src/ios/ScanditBarcodeCapture.framework" />
+        <framework src="src/ios/ScanditCaptureCore.framework" />
+		
 		
     <header-file src="src/ios/MainViewController.h" />
     <source-file src="src/ios/MainViewController.m" />
