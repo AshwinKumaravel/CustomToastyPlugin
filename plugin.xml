@@ -46,7 +46,7 @@
 	   <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="ToastyPlugin">
-                <param name="ios-package" value="MainViewController" />
+                <param name="ios-package" value="ToastyPlugin" />
             </feature>
         </config-file>
 		  <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
@@ -57,8 +57,8 @@
         <framework src="src/ios/ScanditCaptureCore.framework" />
 		
 		
-    <header-file src="src/ios/MainViewController.h" />
-    <source-file src="src/ios/MainViewController.m" />
+    <header-file src="src/ios/ToastyPlugin.h" />
+    <source-file src="src/ios/ToastyPlugin.m" />
      
     </platform>
 	

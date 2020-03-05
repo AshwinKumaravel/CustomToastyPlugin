@@ -1,32 +1,12 @@
-/*
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
- */
-
 //
-//  MainViewController.h
-//  Workshop
+//  ToastyPlugin.m
+//  ToastyPluginTest
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//  Created by Ashwin on 05/03/20.
 //
 
 @import ScanditBarcodeCapture;
-#import "MainViewController.h"
+#import "ToastyPlugin.h"
 
 static NSString *const _Nonnull licenseKey = @"AcwuTyW6OyCfAw/oXRAg/7w/zNFaMBqI/XXo8hZcKMWydVYgu0dYgktRqT72eZOoPX6vMTg7KxyjQRt78nZJXmJ7wf/sc2tvcmgdi+xugYNeL1NbHlbu5jhlSTEyR1jTb2M0f6BY26tVL4G1hzvXOdoxCg/iDwcrNt9dwzfiBs7HAR5mLKgxmsap6WBqG3OS/vob53Z5dr1dYtmCV4aKmuvU19tYB/9Hr4hFJi8lMji/0f/WJKaFlWcoqsFlQqD8gRONQNWcSiM4wUZiIQrz8Kz+dH1wGh43pHrqGJjklZfoEANoqEoNe+Oyyq9TVKDaRQAjFlZ4bLIBFIExqPn+xQAP3EDNeuYJdTcaOpllxA8QLHKb04tSZg2st0XEQ/WkbD551a8DwfeM4nJt5hHKcpTbREC9ZE4jCBZFndKMfOmQf/l7qhzU9nQSvHQcuYMGNBEVG5UMpCCyotp2m6lG9nSGP/yH5sz8DwMDlHSfbkdarrQKR01f1P4hbVnqIjN5QQ/v4Pvbz/Jj/0ae/aDIMng3aljRzxWWhLEoXEKiGU40LTR3mLR9EezkYYpC+/oOAbBwhjZudNwaUerRsM8h2ys03l0TvPZPvqDbC2njAIHSZxHF5AIKRzfPgzyrC1A0XA4aZ8bAFRQ68QEbEfF16qL6A76mpaZsGVN28cPOt1zEey9KzmiY8ZmJ9YQ+76YipnCVFz4zQcMohgwXhwGaUZQGQTo5ESUpwzodkAhkBG7gakf8D1XEr2SVNmDUERh9TSYrG7Z8TIWIWUToy8P8G6jM+50t+dKS+wnbcmzIwfFpuWI1XrQOd1oyQlV94LdChZjRN8iL";
 
@@ -40,7 +20,7 @@ static NSString *const _Nonnull licenseKey = @"AcwuTyW6OyCfAw/oXRAg/7w/zNFaMBqI/
 
 @end
 
-@interface MainViewController () <SDCBarcodeCaptureListener>
+@interface ToastyPlugin () <SDCBarcodeCaptureListener>
 
 @property (strong, nonatomic) SDCDataCaptureContext *context;
 @property (strong, nonatomic, nullable) SDCCamera *camera;
@@ -52,7 +32,7 @@ static NSString *const _Nonnull licenseKey = @"AcwuTyW6OyCfAw/oXRAg/7w/zNFaMBqI/
 
 
 
-@implementation MainViewController
+@implementation ToastyPlugin
 
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -215,7 +195,7 @@ static NSString *const _Nonnull licenseKey = @"AcwuTyW6OyCfAw/oXRAg/7w/zNFaMBqI/
         [[SDCSymbologyDescription alloc] initWithSymbology:barcode.symbology].readableName;
     NSString *result = [NSString stringWithFormat:@"Scanned %@ (%@)", barcode.data, symbology];
 
-    __weak MainViewController *weakSelf = self;
+    __weak ToastyPlugin *weakSelf = self;
     [self showResult:result
           completion:^{
               // Enable recognizing barcodes when the result is not shown anymore.
