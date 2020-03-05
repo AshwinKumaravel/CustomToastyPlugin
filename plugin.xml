@@ -53,15 +53,7 @@
             <string>Required for Scanning</string>
         </config-file>
 		
-		<framework src="CordovaLib.lib" />
-		<framework src="libiconv.dylib" />
-        <framework src="AVFoundation.framework" />
-        <framework src="AssetsLibrary.framework" />
-        <framework src="CoreVideo.framework" />
-        <framework src="QuartzCore.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="CoreImage.framework" />
-        <framework src="AudioToolbox.framework" />
+		
         <framework src="src/ios/ScanditBarcodeCapture.framework" custom="true"/>
         <framework src="src/ios/ScanditCaptureCore.framework" custom="true"/>
 		
