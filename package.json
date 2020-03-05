@@ -6,6 +6,7 @@
     "id": "cordova-plugin-toastyplugin",
     "platforms": [
       "android"
+	  "ios"
     ]
   },
   "repository": {
