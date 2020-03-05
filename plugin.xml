@@ -44,20 +44,19 @@
     </platform>
 	
 	   <platform name="ios">
-	      <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-            <string>Required for Scanning</string>
-        </config-file>
         <config-file target="config.xml" parent="/*">
             <feature name="ToastyPlugin">
                 <param name="ios-package" value="MainViewController" />
             </feature>
         </config-file>
-
-        <framework src="src/ios/ScanditBarcodeCapture.framework"  weak="false"/>
-        <framework src="src/ios/ScanditCaptureCore.framework" weak="false"/>
+		  <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>Required for Scanning</string>
+        </config-file>
 		
-    <header-file src="src/ios/MainViewController.h" target-dir="ToastyPlugin"/>
-    <source-file src="src/ios/MainViewController.m" target-dir="ToastyPlugin"/>
+     
+		
+    <header-file src="src/ios/MainViewController.h" />
+    <source-file src="src/ios/MainViewController.m" />
      
     </platform>
 	
