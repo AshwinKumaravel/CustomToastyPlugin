@@ -8,7 +8,9 @@
 
 - (void)show:(CDVInvokedUrlCommand*)command
 {
-	
+	CDVPluginResult* pluginResult = nil;
+	NSString* callbackId = command.callbackId;
+	[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
 
