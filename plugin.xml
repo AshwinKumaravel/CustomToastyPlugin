@@ -43,7 +43,14 @@
 		<source-file src="src/android/annotations-13.0.jar" target-dir="libs"/>
     </platform>
 	
-	
+	   <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToastyPlugin">
+                <param name="ios-package" value="ToastyPlugin" />
+            </feature>
+        </config-file>
+     
+    </platform>
 	
 	
 	
