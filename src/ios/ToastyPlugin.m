@@ -5,6 +5,7 @@
 //  Created by Ashwin on 05/03/20.
 //
 
+#import <Cordova/CDV.h>
 @import ScanditBarcodeCapture;
 #import "ToastyPlugin.h"
 
@@ -33,6 +34,14 @@ static NSString *const _Nonnull licenseKey = @"AcwuTyW6OyCfAw/oXRAg/7w/zNFaMBqI/
 
 
 @implementation ToastyPlugin
+
+- (void)show:(CDVInvokedUrlCommand*)command
+{
+        [self setupRecognition];
+        self.barcodeCapture.enabled = YES;
+        [self.camera switchToDesiredState:SDCFrameSourceStateOn];
+}
+
 
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
