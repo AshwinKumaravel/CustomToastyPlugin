@@ -47,6 +47,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="ToastyPlugin">
                 <param name="ios-package" value="ToastyPlugin" />
+				 <param name="onload" value="true" />
             </feature>
         </config-file>
 		  <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
