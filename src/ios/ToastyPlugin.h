@@ -1,16 +1,11 @@
-//
-//  ToastyPlugin.h
-//  ToastyPluginTest
-//
-//  Created by Ashwin on 05/03/20.
-//
+#import <Cordova/CDVViewController.h>
+#import <Cordova/CDVCommandDelegateImpl.h>
+#import <Cordova/CDVCommandQueue.h>
 
-
-#import <Cordova/CDVPlugin.h>
-
-@interface ToastyPlugin : CDVPlugin {
+@interface ToastyPlugin : CDVViewController
+{
+    
 }
-
-//- (void)saveScreenshot:(NSArray*)arguments withDict:(NSDictionary*)options;
 - (void)show:(CDVInvokedUrlCommand*)command;
+
 @end
