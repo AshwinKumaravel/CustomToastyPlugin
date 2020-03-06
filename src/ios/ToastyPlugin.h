@@ -6,8 +6,6 @@
 //
 
 
-import <Foundation/Foundation.h>
-#import <QuartzCore/QuartzCore.h>
 #import <Cordova/CDVPlugin.h>
 
 @interface ToastyPlugin : CDVPlugin {
