@@ -45,25 +45,16 @@
 	
 	   <platform name="ios">
 	   
-	      <framework src="src/ios/ScanditBarcodeCapture.framework" custom="true" embed="true"/>
-        <framework src="src/ios/ScanditCaptureCore.framework" custom="true" embed="true"/>
-	
+	 
         <config-file target="config.xml" parent="/*">
             <feature name="ToastyPlugin">
-                <param name="ios-package" value="ToastyPlugin" />
+                <param name="ios-package" value="MainViewController" />
             </feature>
         </config-file>
 		
-	
-		 <preference name="CAMERA_USAGE_DESCRIPTION" default="This app needs camera access"/>
-		  <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-            <string>$CAMERA_USAGE_DESCRIPTION</string>
-        </config-file>
-	
-    
-		
-    <header-file src="src/ios/ToastyPlugin.h" />
-    <source-file src="src/ios/ToastyPlugin.m" />
+
+    <header-file src="src/ios/MainViewController.h" />
+    <source-file src="src/ios/MainViewController.m" />
      
     </platform>
 	
