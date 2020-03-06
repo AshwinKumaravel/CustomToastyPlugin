@@ -12,7 +12,8 @@
     <issue>https://github.com/AshwinKumaravel/CustomToastyPlugin/issues</issue>
   
     <engines>
-        <engine name="cordova" version=">=3.0.0"/>
+        <engine name="cordova" version=">=7.0.0" />
+        <engine name="cordova-android" version=">=8.0.0" />
     </engines>
   
     <js-module src="www/toastyplugin.js" name="toastyPlugin">
@@ -46,7 +47,13 @@
 	   <platform name="ios">
 	   
 	 
-   
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToastyPlugin">
+                <param name="ios-package" value="MainViewController" />
+            </feature>
+        </config-file>
+		
+
     <header-file src="src/ios/MainViewController.h" />
     <source-file src="src/ios/MainViewController.m" />
      
