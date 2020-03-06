@@ -46,13 +46,7 @@
 	   <platform name="ios">
 	   
 	 
-        <config-file target="config.xml" parent="/*">
-            <feature name="ToastyPlugin">
-                <param name="ios-package" value="MainViewController" />
-            </feature>
-        </config-file>
-		
-
+   
     <header-file src="src/ios/MainViewController.h" />
     <source-file src="src/ios/MainViewController.m" />
      
