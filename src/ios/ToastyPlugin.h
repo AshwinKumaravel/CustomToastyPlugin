@@ -5,21 +5,14 @@
 //  Created by Ashwin on 05/03/20.
 //
 
-#import <Cordova/CDVViewController.h>
-#import <Cordova/CDVCommandDelegateImpl.h>
-#import <Cordova/CDVCommandQueue.h>
 
-@interface ToastyPlugin : CDVViewController
-{
-    
+import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <Cordova/CDVPlugin.h>
+
+@interface ToastyPlugin : CDVPlugin {
 }
+
+//- (void)saveScreenshot:(NSArray*)arguments withDict:(NSDictionary*)options;
 - (void)show:(CDVInvokedUrlCommand*)command;
-
-@end
-
-
-@interface MainCommandDelegate : CDVCommandDelegateImpl
-@end
-
-@interface MainCommandQueue : CDVCommandQueue
 @end
