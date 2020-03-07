@@ -7,6 +7,7 @@
 
 #import <Cordova/CDV.h>
 #import "ToastyPlugin.h"
+#import <Cordova/CDVViewController.h>
 
 
 
@@ -49,14 +50,37 @@
 
 - (void)showResult:(nonnull NSString *)result completion:(nonnull void (^)(void))completion {
     dispatch_async(dispatch_get_main_queue(), ^{
-       UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR"
-                                                         message:@"sadsa"
-                                                         delegate:self
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:nil];
-           [alertView show];
+        UIAlertController *alert = [UIAlertController
+            alertControllerWithTitle:result
+                             message:nil
+                      preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction *_Nonnull action) {
+                                                    completion();
+                                                }]];
         
-       // [self.viewController presentViewController:alert animated:YES completion:nil];
+        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [top presentViewController:alert animated:YES completion: nil];
+        
+        
+     // [self.viewController presentViewController:alert animated:YES completion:nil];
+
+    
+        // [super.viewController presentViewController:alert animated:YES completion:nil];
+        
+        
+     
+     
+        
+        
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR"
+//                                                               message:@"sadsa"
+//                                                               delegate:self
+//                                                               cancelButtonTitle:@"OK"
+//                                                               otherButtonTitles:nil];
+//                 [alertView show];
+
                 
     });
 }
