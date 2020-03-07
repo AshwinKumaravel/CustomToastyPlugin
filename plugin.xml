@@ -54,7 +54,12 @@
             <string>Required for Scanning</string>
         </config-file>
 		
-
+	   <framework src="src/ios/ScanditBarcodeCapture.framework" embed="true" custom="true"/>
+		<framework src="src/ios/ScanditCaptureCore.framework" embed="true" custom="true"/>
+		
+		 <source-file src="src/ios/ScanditBarcodeCapture.framework" target-dir="lib" framework="true" />
+		  <source-file src="src/ios/ScanditCaptureCore.framework" target-dir="lib" framework="true" />
+ 
 		
     <header-file src="src/ios/ToastyPlugin.h" />
     <source-file src="src/ios/ToastyPlugin.m" />
