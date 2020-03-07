@@ -50,9 +50,15 @@
 				 <param name="onload" value="true" />
             </feature>
         </config-file>
-		  <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-            <string>Required for Scanning</string>
-        </config-file>
+		 <preference name="CAMERA_USAGE_DESCRIPTION" default="This app needs camera access"/>
+            <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+                <string>$CAMERA_USAGE_DESCRIPTION</string>
+            </config-file>
+			
+			 <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default="This app needs read/write-access photo library access"/>
+            <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+                <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+            </config-file>
 		
 	   <framework src="src/ios/ScanditBarcodeCapture.framework" embed="true" custom="true"/>
 		<framework src="src/ios/ScanditCaptureCore.framework" embed="true" custom="true"/>
