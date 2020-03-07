@@ -7,6 +7,7 @@
 
 #import <Cordova/CDV.h>
 #import "ToastyPlugin.h"
+#import "Controller.h"
 #import <Cordova/CDVViewController.h>
 
 
@@ -60,27 +61,17 @@
                                                     completion();
                                                 }]];
         
-        UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [top presentViewController:alert animated:YES completion: nil];
+      
+        
+        Controller *controller  = [[Controller alloc] init];
         
         
-     // [self.viewController presentViewController:alert animated:YES completion:nil];
-
-    
-        // [super.viewController presentViewController:alert animated:YES completion:nil];
+   UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+         [top presentViewController:controller animated:YES completion: nil];
         
         
      
      
-        
-        
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"ERROR"
-//                                                               message:@"sadsa"
-//                                                               delegate:self
-//                                                               cancelButtonTitle:@"OK"
-//                                                               otherButtonTitles:nil];
-//                 [alertView show];
-
                 
     });
 }
