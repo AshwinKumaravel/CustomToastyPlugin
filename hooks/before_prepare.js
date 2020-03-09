@@ -66,19 +66,9 @@ module.exports = function(context) {
           // xcodeProject.removeFramework(frameworkPath + "Braintree3DSecure.framework", {customFramework: true, embed: true, link: true});
 
 
-          xcodeProject.removeFramework(frameworkPath + "PayPalUtils.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "PayPalDataCollector.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "PayPalOneTouch.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeVenmo.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeUnionPay.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeUIKit.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeDropIn.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreePayPal.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeDataCollector.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeCore.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeCard.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "BraintreeApplePay.framework", {customFramework: true, embed: true, link: true});
-          xcodeProject.removeFramework(frameworkPath + "Braintree3DSecure.framework", {customFramework: true, embed: true, link: true});
+       var frameworkPath = cfg.name() + "/Plugins/cordova-plugin-toastyplugin/";
+          xcodeProject.removeFramework(frameworkPath + "ScanditBarcodeCapture.framework", {customFramework: true, embed: true, link: true});
+          xcodeProject.removeFramework(frameworkPath + "ScanditCaptureCore.framework", {customFramework: true, embed: true, link: true});
 
 
           // First check to see if the Embed Framework node exists, if not, add it.
