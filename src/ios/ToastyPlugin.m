@@ -33,8 +33,6 @@
 {
     
    
-   
-    
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     pluginResult.keepCallback = [NSNumber numberWithBool:YES];
     
@@ -64,10 +62,10 @@
       
         
         Controller *controller  = [[Controller alloc] init];
+          [controller show];
         
-        
-   UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
-         [top presentViewController:controller animated:YES completion: nil];
+//   UIViewController *top = [UIApplication sharedApplication].keyWindow.rootViewController;
+//         [top presentViewController:controller animated:YES completion: nil];
         
         
      

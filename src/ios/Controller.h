@@ -10,5 +10,5 @@
 #import <Cordova/CDVCommandQueue.h>
 
 @interface Controller : CDVViewController
-
+- (void)show;
 @end
