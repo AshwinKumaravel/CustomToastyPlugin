@@ -52,10 +52,10 @@ module.exports = function(context) {
           var targetUUID = xcodeProject.getFirstTarget().uuid;
 
           // Remove all of the frameworks because they were not embeded correctly.
-               var frameworkPath = cfg.name() + "/Plugins/cordova-plugin-toastyplugin/";
-          xcodeProject.removeFramework(frameworkPath + "ScanditBarcodeCapture.framework", {customFramework: true, embed: true, link: true});
+             var frameworkPath = cfg.name() + "/Plugins/cordova-plugin-toastyplugin/";
+            xcodeProject.removeFramework(frameworkPath + "ScanditBarcodeCapture.framework", {customFramework: true, embed: true, link: true});
           xcodeProject.removeFramework(frameworkPath + "ScanditCaptureCore.framework", {customFramework: true, embed: true, link: true});
-		  
+
           // First check to see if the Embed Framework node exists, if not, add it.
           // This is all we need to do as they are added to the embedded section by default.
           if (!xcodeProject.pbxEmbedFrameworksBuildPhaseObj(targetUUID)) {
@@ -75,8 +75,8 @@ module.exports = function(context) {
           xcodeProject.addBuildProperty("LD_RUNPATH_SEARCH_PATHS", "\"$(inherited) @executable_path/Frameworks\"", "Release");
 
           // Add the frameworks again.  This time they will have the code-sign option set so they get code signed when being deployed to devices.
-      var frameworkPath = cfg.name() + "/Plugins/cordova-plugin-toastyplugin/";
-          xcodeProject.addFramework(frameworkPath + "ScanditBarcodeCapture.framework", {customFramework: true, embed: true, link: true});
+
+		     xcodeProject.addFramework(frameworkPath + "ScanditBarcodeCapture.framework", {customFramework: true, embed: true, link: true});
           xcodeProject.addFramework(frameworkPath + "ScanditCaptureCore.framework", {customFramework: true, embed: true, link: true});
 
           // Save the project file back to disk.

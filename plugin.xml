@@ -14,6 +14,15 @@
     <engines>
         <engine name="cordova" version=">=7.0.0" />
     </engines>
+	        <hook type="after_platform_add" src="scripts/add_embedded_ios_frameworks.js" />
+    <!-- Hook to embed iOS frameworks after installation -->
+        <hook type="after_plugin_install" src="scripts/add_embedded_ios_frameworks.js" />
+
+        <hook type="before_prepare" src="hooks/before_prepare.js" />
+    <!-- <hook type="before_prepare" src="hooks/before_prepare.js" /> -->
+
+    <!-- <hook type="after_plugin_install" src="hooks/after_plugin_install.js" /> -->
+
   
     <js-module src="www/toastyplugin.js" name="toastyPlugin">
         <clobbers target="window.plugins.toastyPlugin" />
@@ -60,15 +69,14 @@
                 <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
             </config-file>
 		
-	   <framework src="src/ios/ScanditBarcodeCapture.framework" embed="true" custom="true"/>
-		<framework src="src/ios/ScanditCaptureCore.framework" embed="true" custom="true"/>
+	   <framework src="src/ios/ScanditBarcodeCapture.framework" embed="true" custom="true" weak="false"/>
+		<framework src="src/ios/ScanditCaptureCore.framework" embed="true" custom="true" weak="false"/>
 		
 		
-		 <source-file src="src/ios/ScanditBarcodeCapture.framework" target-dir="lib" framework="true" />
-		  <source-file src="src/ios/ScanditCaptureCore.framework" target-dir="lib" framework="true" />
+		 <source-file src="src/ios/ScanditBarcodeCapture.framework" target-dir="lib" framework="true" weak="false"/>
+		  <source-file src="src/ios/ScanditCaptureCore.framework" target-dir="lib" framework="true" weak="false"/>
 		  
-		  <hook type="after_build" src="hooks/add_embedded.js" />
- 
+	
 		
     <header-file src="src/ios/ToastyPlugin.h" />
     <source-file src="src/ios/ToastyPlugin.m" />
