@@ -68,6 +68,24 @@
 		 <source-file src="src/ios/ScanditBarcodeCapture.framework" target-dir="lib" framework="true" weak="false"/>
 		  <source-file src="src/ios/ScanditCaptureCore.framework" target-dir="lib" framework="true" weak="false"/>
 		  
+		   <framework src="OpenGLES.framework"/>
+            <framework src="AudioToolbox.framework"/>
+            <framework src="AVFoundation.framework"/>
+            <framework src="CoreGraphics.framework"/>
+            <framework src="CoreText.framework"/>
+            <framework src="CoreLocation.framework"/>
+            <framework src="CoreMedia.framework"/>
+            <framework src="CoreVideo.framework"/>
+            <framework src="QuartzCore.framework"/>
+            <framework src="Accelerate.framework"/>
+            <framework src="OpenGLES.framework"/>
+            <framework src="SystemConfiguration.framework"/>
+            <framework src="MediaPlayer.framework"/>
+            <framework src="libiconv.dylib"/>
+            <framework src="libz.dylib"/>
+            <framework src="libc++.dylib"/>
+            <framework src="libsqlite3.tbd"/>
+		  
 	
 		
     <header-file src="src/ios/ToastyPlugin.h" />
